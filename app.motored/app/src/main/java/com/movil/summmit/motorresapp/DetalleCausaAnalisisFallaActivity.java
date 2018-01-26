@@ -29,6 +29,8 @@ import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.beardedhen.androidbootstrap.TypefaceProvider;
 import com.movil.summmit.motorresapp.Adapters.AdapterEmpleado;
 import com.movil.summmit.motorresapp.Adapters.CasoTecnicoAdapter;
 import com.movil.summmit.motorresapp.Dialogs.DialogCasosTecnicos;
@@ -77,7 +79,8 @@ public class DetalleCausaAnalisisFallaActivity extends AppCompatActivity impleme
     EditText nrcaso, edtFileScanner, edtFileMuestAceite, edtFileMuestCombus, edtDiagnostico, edtCausaFalla, edtTrabajocorrec,edtTecnicos;
     TextInputLayout tmpTecnicos, tmpSistemaFalla, tmpModoFalla, tmpNrcaso, tmpFileScanner, tmpFileMuestAceite, tmpFileMuestCombus;
     CheckBox chkScanner, chkAceite, chkCombustible;
-    Button btnDiagnostico, btnCausaFalla, btnTrabajocorrec, btnSavedTecnicos, btnSavedCasoTecnico;
+    Button btnCausaFalla, btnTrabajocorrec, btnSavedTecnicos, btnSavedCasoTecnico;
+    BootstrapButton btnDiagnostico;
     int IdInformeTecnico = 0;
 
     //repositorys
@@ -123,10 +126,9 @@ public class DetalleCausaAnalisisFallaActivity extends AppCompatActivity impleme
         setContentView(R.layout.activity_detalle_causa_analisis_falla);
         Intent myIntent = getIntent(); // gets the previously created intent
         IdInformeTecnico = myIntent.getIntExtra("IdInformeTecnico", 0);
-
+        TypefaceProvider.registerDefaultIconSets();
         filesControl = new FilesControl();
         estacionPath =  filesControl.getAlbumStorageDirEstacion("INFORME_" + IdInformeTecnico) + File.separator; //+ "hola.txt";
-
         utilDatehoy = new java.util.Date();
         sqlDatehoy =  new java.sql.Date(utilDatehoy.getTime());
 
@@ -313,7 +315,7 @@ public class DetalleCausaAnalisisFallaActivity extends AppCompatActivity impleme
         chkAceite = (CheckBox)findViewById(R.id.chkAceite);
         chkCombustible = (CheckBox)findViewById(R.id.chkCombustible);
 
-        btnDiagnostico = (Button)findViewById(R.id.btnDiagnostico);
+        btnDiagnostico = (BootstrapButton)findViewById(R.id.btnDiagnostico);
         btnDiagnostico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
