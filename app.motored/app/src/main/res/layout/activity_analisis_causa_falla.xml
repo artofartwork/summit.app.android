@@ -4,27 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:gravity="center"
+    android:orientation="vertical" >
     android:padding="5dp"
     tools:context="com.movil.summmit.motorresapp.AnalisisCausaFallaActivity">
-    
+    <View
+        android:layout_width="1dp"
+        android:layout_weight="1"
+        android:layout_height="1dp"/>
     <Button
         android:id="@+id/addDetalleCausaFalla"
         android:textAlignment="textEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Agregar item"/>
+    <View
+        android:layout_width="1dp"
+        android:layout_weight="1"
+        android:layout_height="1dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listaanalisiscausa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:overScrollMode="never" />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
 
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/listaanalisiscausa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:clipToPadding="false"
-            android:overScrollMode="never" />
-        
-
-    
 
 </LinearLayout>

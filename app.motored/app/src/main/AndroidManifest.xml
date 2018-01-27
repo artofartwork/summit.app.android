@@ -22,17 +22,18 @@
         <activity android:name=".SplashActivity">
 
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".ListaInformesActivity" />
         <activity android:name=".NuevoInformeActivity" />
         <activity android:name=".AnalisisCausaFallaActivity" />
-        <activity android:name=".DetalleCausaAnalisisFallaActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".DetalleCausaAnalisisFallaActivity"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".ConclusionesRecomendacionesActivity" />
         <activity android:name=".AdjuntosActivity" />
         <activity android:name=".GuardarEnviarActivity" />
